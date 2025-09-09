@@ -22,6 +22,7 @@ export class LoginComponent {
 
   entrar() {
     const json = this.loginForm.value;
+    console.log(json);
     
     this.servicioAuth.getUserByDni(json.dni! as string, json).subscribe(token => {
       
@@ -33,7 +34,7 @@ export class LoginComponent {
       //  this.router.navigate(['/home']);
       //} else { alert('dnio o contraseña incorrecta'); }
     }, error => {
-      alert('DNI o contraseña incorrecta');
+      alert(error);
     });
     };
 }
